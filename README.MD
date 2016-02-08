@@ -13,10 +13,10 @@
 
 *Requirements*
 - [Docker](https://www.docker.com/)
-- [giordan/d-essentials] (https://hub.docker.com/r/giordan/d-essentials/- [giordan/d-essentials]
+- [giordan/d-essentials] (https://hub.docker.com/r/giordan/d-essentials/)
 
 *Base Docker Image*
-- [giordan/d-essentials] (https://hub.docker.com/r/giordan/d-essentials/- [giordan/d-essentials]
+- [giordan/d-essentials] (https://hub.docker.com/r/giordan/d-essentials/)
 
 *Docker Pull Command*
 - `docker pull giordan/D-php5-fpm`
