@@ -23,7 +23,10 @@ RUN apt-get update && apt-get install -y \
 
 ADD ${FILES}php-app.ini /etc/php5/fpm/conf.d/
 ADD ${FILES}php-app.ini /etc/php5/cli/conf.d/
-#ADD ${FILES}php-app.pool.conf /etc/php5/fpm/pool.d/
+ADD ${FILES}php-app.pool.conf /etc/php5/fpm/pool.d/
+
+RUN rm -rf /etc/php5/fpm/pool.d/www.conf
+RUN usermod -u 1000 www-data
 
 # Configure executable to start php5-fpm.
 ENTRYPOINT ["php5-fpm"]
