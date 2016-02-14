@@ -10,6 +10,6 @@ php -r "if (hash('SHA384', file_get_contents('composer-setup.php')) === '$checks
 
 php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
-
+php -r "unlink('composer-setup.php');"
 
 exec /usr/sbin/php5-fpm --nodaemonize
