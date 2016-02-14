@@ -31,7 +31,7 @@ RUN usermod -u 1000 www-data
 ADD start.sh /start.sh
 
 # Configure executable to start php5-fpm.
-ENTRYPOINT ["/start.sh"]
+CMD ["/start.sh"]
 
 
 # Expose ports.
