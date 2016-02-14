@@ -28,11 +28,11 @@ ADD ${FILES}php-app.pool.conf /etc/php5/fpm/pool.d/
 RUN rm -rf /etc/php5/fpm/pool.d/www.conf
 RUN usermod -u 1000 www-data
 
-# Configure executable to start php5-fpm.
-ENTRYPOINT ["php5-fpm"]
+ADD start.sh /start.sh
 
-# Define default command.
-CMD ["-F"]
+# Configure executable to start php5-fpm.
+ENTRYPOINT ["/start.sh"]
+
 
 # Expose ports.
 EXPOSE 9000
