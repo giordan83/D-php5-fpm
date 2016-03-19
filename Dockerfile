@@ -21,6 +21,9 @@ RUN apt-get update && apt-get install -y \
     php5-gd \
     php5-intl
 
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 ADD ${FILES}php-app.ini /etc/php5/fpm/conf.d/
 ADD ${FILES}php-app.ini /etc/php5/cli/conf.d/
 ADD ${FILES}php-app.pool.conf /etc/php5/fpm/pool.d/
