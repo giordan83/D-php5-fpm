@@ -12,7 +12,7 @@ clean:
 # Remove the image.
 .PHONY: clean-image
 clean-image:
-	docker rm giordan/d-php5-fpm
+	docker rmi giordan/d-php5-fpm
 
 # List all containers.
 .PHONY: ls
