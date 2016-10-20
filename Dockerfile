@@ -9,6 +9,7 @@ MAINTAINER Gabriele Giuranno <gabrielegiuranno@gmail.com>
 
 # Set environment variables.
 ENV FILES conf/
+ENV TERM xterm-256color
 
 RUN apt-get update
 RUN apt-get update && apt-get install -y \
@@ -31,10 +32,10 @@ ADD ${FILES}php-app.pool.conf /etc/php5/fpm/pool.d/
 RUN rm -rf /etc/php5/fpm/pool.d/www.conf
 RUN usermod -u 1000 www-data
 
-ADD start.sh /start.sh
+ADD start.sh /usr/local/bin/start.sh
 
 # Configure executable to start php5-fpm.
-CMD ["/start.sh"]
+CMD ["start.sh"]
 
 
 # Expose ports.
